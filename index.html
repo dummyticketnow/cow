@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="google-site-verification" content="yinMTuDDT3JHuuuz-s1GDnKdqYOgF_co9znyE8ZMHjU" />
 <style>
   :root{
     --gold:#C97A1A;
@@ -622,7 +623,91 @@
 
   /* ---------- Section heading shared ---------- */
   .section-head{max-width:640px;}
+
+  /* ---------- MOBILE FLOATING DONATE ---------- */
+  .mob-float-wrap {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    display: none;
+    background: #fff;
+    border-radius: 999px;
+    padding: 6px;
+    box-shadow: 0 10px 25px rgba(42,33,24,0.15), 0 0 0 6px rgba(168,67,31,0.12);
+    align-items: center;
+    width: max-content;
+    max-width: 95vw;
+  }
+  .mob-float-left {
+    background: var(--terracotta);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: transform .2s ease;
+  }
+  .mob-float-left:active {
+    transform: scale(0.96);
+  }
+  .mob-float-left svg {
+    width: 20px;
+    height: 20px;
+  }
+  .mob-float-left-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.15;
+  }
+  .mob-float-left-text b {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  .mob-float-left-text span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.95;
+  }
+  .mob-float-right {
+    background: var(--ivory-deep);
+    color: var(--green-deep);
+    padding: 10px 16px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.88rem;
+    margin-left: 6px;
+  }
+  .mob-float-right svg {
+    width: 18px;
+    height: 18px;
+    color: var(--terracotta);
+  }
+  
+  @media (max-width: 880px) {
+    .mob-float-wrap {
+      display: flex;
+    }
+  }
 </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W08N2209H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W08N2209H4');
+</script>
+
 </head>
 <body>
 
@@ -1040,6 +1125,21 @@
     </div>
   </div>
 </footer>
+
+<!-- ============ MOBILE FLOATING DONATE ============ -->
+<div class="mob-float-wrap">
+  <a href="https://razorpay.me/@omexera" target="_blank" rel="noopener" class="mob-float-left">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    <div class="mob-float-left-text">
+      <b>Donate Now</b>
+      <span>(₹501)</span>
+    </div>
+  </a>
+  <div class="mob-float-right">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    <span>80G Certified</span>
+  </div>
+</div>
 
 </body>
 </html>
