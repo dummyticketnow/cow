@@ -645,6 +645,43 @@
   .img-cta a:hover{transform:scale(1.02);}
   .img-cta img{width:100%;height:auto;display:block;}
 
+  /* ---------- RECENT USERS ---------- */
+  .recent-users{padding:40px 0 60px;}
+  .ru-container{background:#fff; padding:40px; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,0.04);}
+  .ru-head{
+    display:flex; align-items:center; gap:12px;
+    font-family:'Eczar',serif; font-size:1.8rem; color:var(--ink);
+    margin-bottom:24px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 12px;
+  }
+  .ru-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:16px;
+  }
+  .ru-card{
+    background:#fff; border:1px solid #f4f4f4; border-radius:12px;
+    padding:16px 20px; display:flex; align-items:center; gap:16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  }
+  .ru-avatar{
+    width:52px; height:52px; border-radius:50%;
+    background:var(--terracotta); color:#fff; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:1.6rem; font-family:'Hind',sans-serif;
+  }
+  .ru-info{display:flex; flex-direction:column; line-height:1.2;}
+  .ru-name{font-weight:700; font-size:1.05rem; color:var(--ink); margin-bottom:6px;}
+  .ru-meta{display:flex; align-items:center; gap:8px; font-size:.85rem;}
+  .ru-amt{color:#10a34a; font-size:1.1rem; font-weight:700;}
+  .ru-dot{color:#c4c4c4; font-size: 1rem;}
+  .ru-time{color:#6b7280; font-size:0.75rem; text-transform:uppercase; font-weight:600;}
+
+  @media (max-width:980px){.ru-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:640px){
+    .ru-grid{grid-template-columns:1fr;}
+    .ru-container{padding:24px 20px;}
+  }
+
   /* ---------- Reduced motion ---------- */
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important;}
@@ -1006,6 +1043,73 @@
         <div class="label">Give What You Can</div>
         <p class="desc">Every rupee helps. Choose any amount that feels right to you.</p>
         <a class="btn btn-outline-dark" href="https://razorpay.me/@omexera" target="_blank" rel="noopener">Donate Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECENT USERS ============ -->
+<section class="recent-users">
+  <div class="wrap">
+    <div class="ru-container">
+      <div class="ru-head">
+        <span style="font-size: 1.6rem;">❤️</span> Recent Compassionate Users
+      </div>
+      <div class="ru-grid">
+        <div class="ru-card">
+          <div class="ru-avatar">A</div>
+          <div class="ru-info">
+            <div class="ru-name">Arup Mondal</div>
+            <div class="ru-meta">
+              <span class="ru-amt">₹100</span><span class="ru-dot">•</span><span class="ru-time">2 MINUTES AGO</span>
+            </div>
+          </div>
+        </div>
+        <div class="ru-card">
+          <div class="ru-avatar">A</div>
+          <div class="ru-info">
+            <div class="ru-name">Anonymous User</div>
+            <div class="ru-meta">
+              <span class="ru-amt">₹1,780</span><span class="ru-dot">•</span><span class="ru-time">9 MINUTES AGO</span>
+            </div>
+          </div>
+        </div>
+        <div class="ru-card">
+          <div class="ru-avatar">R</div>
+          <div class="ru-info">
+            <div class="ru-name">Rajesh Kumar</div>
+            <div class="ru-meta">
+              <span class="ru-amt">₹600</span><span class="ru-dot">•</span><span class="ru-time">14 MINUTES AGO</span>
+            </div>
+          </div>
+        </div>
+        <div class="ru-card">
+          <div class="ru-avatar">A</div>
+          <div class="ru-info">
+            <div class="ru-name">Anonymous User</div>
+            <div class="ru-meta">
+              <span class="ru-amt">₹101</span><span class="ru-dot">•</span><span class="ru-time">22 MINUTES AGO</span>
+            </div>
+          </div>
+        </div>
+        <div class="ru-card">
+          <div class="ru-avatar">V</div>
+          <div class="ru-info">
+            <div class="ru-name">Vaastav Chhabra</div>
+            <div class="ru-meta">
+              <span class="ru-amt">₹10</span><span class="ru-dot">•</span><span class="ru-time">26 MINUTES AGO</span>
+            </div>
+          </div>
+        </div>
+        <div class="ru-card">
+          <div class="ru-avatar">R</div>
+          <div class="ru-info">
+            <div class="ru-name">Ruhit Kachari</div>
+            <div class="ru-meta">
+              <span class="ru-amt">₹2,940</span><span class="ru-dot">•</span><span class="ru-time">27 MINUTES AGO</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
