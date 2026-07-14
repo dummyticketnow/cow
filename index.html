@@ -18,7 +18,7 @@
     --green-deep:#23362A;
     --ivory:#FBF3E6;
     --ivory-deep:#F3E7D2;
-    --terracotta:#A8431F;
+    --terracotta:#f67309;
     --ink:#2A2118;
     --line:rgba(42,33,24,0.12);
     --max:1180px;
@@ -62,10 +62,17 @@
   .btn-primary{
     background:var(--terracotta);
     color:#fff;
-    box-shadow:0 10px 24px -8px rgba(168,67,31,0.55);
+    box-shadow:0 10px 24px -8px rgba(246,115,9,0.55);
+    animation: pulse-donate 2s infinite;
   }
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px -8px rgba(168,67,31,0.65);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px -8px rgba(246,115,9,0.65); animation: none;}
   .btn-primary:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;}
+
+  @keyframes pulse-donate {
+    0% { box-shadow: 0 0 0 0 rgba(246, 115, 9, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(246, 115, 9, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(246, 115, 9, 0); }
+  }
   .btn-ghost{
     background:transparent;
     border-color:rgba(255,255,255,0.55);
@@ -163,7 +170,7 @@
     color:#fff;
     margin:14px 0 20px;
   }
-  .hero-copy h1 em{font-style:normal;color:var(--marigold);}
+  .hero-copy h1 em{font-style:normal;color:var(--terracotta);}
   .hero-copy p{
     font-size:1.08rem;
     color:rgba(255,255,255,0.86);
@@ -243,7 +250,7 @@
     color:#fff;
     border-radius:14px;
     padding:18px 20px;
-    box-shadow:0 16px 30px -12px rgba(168,67,31,.5);
+    box-shadow:0 16px 30px -12px rgba(246,115,9,.5);
     max-width:190px;
   }
   .about-badge b{font-family:'Eczar',serif;font-size:1.9rem;display:block;}
@@ -616,6 +623,28 @@
   @media (max-width:880px){.foot-grid{grid-template-columns:1fr 1fr;}}
   @media (max-width:560px){.foot-grid{grid-template-columns:1fr;}}
 
+  /* ---------- BLOG ---------- */
+  .blog{padding:90px 0;}
+  .blog-head{max-width:600px;margin-bottom:40px;}
+  .blog-head h2{font-size:clamp(1.8rem,2.6vw,2.2rem);margin-top:10px;}
+  .blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
+  .blog-card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s ease, box-shadow .2s ease;}
+  .blog-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -18px rgba(42,33,24,0.25);}
+  .blog-card img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+  .blog-content{padding:26px 30px;}
+  .blog-content h3{font-size:1.3rem;margin-bottom:12px;color:var(--green-deep);}
+  .blog-content p{color:#4a4035;font-size:.95rem;margin-bottom:20px;}
+  .blog-content .read-more{display:inline-flex;align-items:center;gap:6px;color:var(--terracotta);font-weight:700;font-size:.95rem;}
+  .blog-content .read-more svg{width:18px;height:18px;}
+  @media (max-width:880px){.blog-grid{grid-template-columns:1fr;}}
+
+  /* ---------- IMAGE CTA ---------- */
+  .img-cta{padding:20px 0 60px;}
+  .img-cta-wrap{max-width:var(--max);margin:0 auto;padding:0 28px;}
+  .img-cta a{display:block;border-radius:20px;overflow:hidden;box-shadow:0 20px 40px -10px rgba(0,0,0,0.15);transition:transform .2s ease;}
+  .img-cta a:hover{transform:scale(1.02);}
+  .img-cta img{width:100%;height:auto;display:block;}
+
   /* ---------- Reduced motion ---------- */
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important;}
@@ -635,7 +664,7 @@
     background: #fff;
     border-radius: 999px;
     padding: 6px;
-    box-shadow: 0 10px 25px rgba(42,33,24,0.15), 0 0 0 6px rgba(168,67,31,0.12);
+    box-shadow: 0 10px 25px rgba(42,33,24,0.15), 0 0 0 6px rgba(246,115,9,0.12);
     align-items: center;
     width: max-content;
     max-width: 95vw;
@@ -729,6 +758,7 @@
       <a href="#rescue">Real Rescues</a>
       <a href="#give">Donate</a>
       <a href="#gallery">Gallery</a>
+      <a href="#blog">Blog</a>
       <a href="#faq">FAQs</a>
     </nav>
     <div class="nav-cta">
@@ -751,6 +781,7 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <span class="eyebrow">Gau Seva · Gaushala Network · Pan-India</span>
+      <h2 style="font-family: 'Eczar', serif; font-size: 2.2rem; font-weight: 700; color: var(--terracotta); margin: 16px 0 0 0; line-height: 1.2;">गौ सेवा परमो धर्मः</h2>
       <h1>Every cow deserves<br>a safe place to <em>graze</em>,<br>and grow old in peace.</h1>
       <p>Shree Gau Kalyan Foundation rescues abandoned, injured and aging cows from the streets and highways of India, and gives them lifelong shelter, fodder and medical care in our gaushalas.</p>
       <div class="hero-actions">
@@ -841,6 +872,37 @@
   <svg width="700" height="20" viewBox="0 0 700 20"><path d="M0,4 Q35,20 70,4 Q105,20 140,4 Q175,20 210,4 Q245,20 280,4 Q315,20 350,4 Q385,20 420,4 Q455,20 490,4 Q525,20 560,4 Q595,20 630,4 Q665,20 700,4" stroke="#A8431F" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
 </div>
 
+<!-- ============ CONDITION UPON RESCUE ============ -->
+<section class="condition" id="condition">
+  <div class="wrap">
+    <div class="condition-head">
+      <span class="eyebrow">The Reality on the Ground</span>
+      <h2>How We Find Them</h2>
+      <p>Before they reach the safety of our gaushalas, many cows endure severe neglect, starvation, and injuries. These raw moments capture the condition in which they are often found, underscoring the urgent need for intervention.</p>
+    </div>
+    <div class="condition-grid">
+      <div class="condition-item ci-v1">
+        <video src="assets/video1.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <div class="condition-item ci-v2">
+        <video src="assets/video2.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <div class="condition-item ci-v3">
+        <video src="assets/video3.mp4" autoplay loop muted playsinline></video>
+      </div>
+      <div class="condition-item ci-i1">
+        <img src="assets/cow4.jpeg" alt="Condition of a rescued cow">
+      </div>
+      <div class="condition-item ci-i2">
+        <img src="assets/cow2.jpeg" alt="Condition of a rescued cow">
+      </div>
+      <div class="condition-item ci-i3">
+        <img src="assets/cow3.jpeg" alt="Condition of a rescued cow">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ WHY IT MATTERS ============ -->
 <section class="why" id="why">
   <div class="wrap">
@@ -907,37 +969,6 @@
     <div class="rescue-foot">
       <p>Every <strong>₹501</strong> you give funds exactly this — a rescue van, a vet's visit, and someone willing to sit with an animal that has no one else.</p>
       <a class="btn btn-primary" href="https://razorpay.me/@omexera" target="_blank" rel="noopener">🐄 Donate Now</a>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CONDITION UPON RESCUE ============ -->
-<section class="condition" id="condition">
-  <div class="wrap">
-    <div class="condition-head">
-      <span class="eyebrow">The Reality on the Ground</span>
-      <h2>How We Find Them</h2>
-      <p>Before they reach the safety of our gaushalas, many cows endure severe neglect, starvation, and injuries. These raw moments capture the condition in which they are often found, underscoring the urgent need for intervention.</p>
-    </div>
-    <div class="condition-grid">
-      <div class="condition-item ci-v1">
-        <video src="assets/video1.mp4" autoplay loop muted playsinline></video>
-      </div>
-      <div class="condition-item ci-v2">
-        <video src="assets/video2.mp4" autoplay loop muted playsinline></video>
-      </div>
-      <div class="condition-item ci-v3">
-        <video src="assets/video3.mp4" autoplay loop muted playsinline></video>
-      </div>
-      <div class="condition-item ci-i1">
-        <img src="assets/cow4.jpeg" alt="Condition of a rescued cow">
-      </div>
-      <div class="condition-item ci-i2">
-        <img src="assets/cow2.jpeg" alt="Condition of a rescued cow">
-      </div>
-      <div class="condition-item ci-i3">
-        <img src="assets/cow3.jpeg" alt="Condition of a rescued cow">
-      </div>
     </div>
   </div>
 </section>
@@ -1035,6 +1066,43 @@
   </div>
 </section>
 
+<!-- ============ BLOG ============ -->
+<section class="blog" id="blog">
+  <div class="wrap">
+    <div class="blog-head">
+      <span class="eyebrow">Latest Updates</span>
+      <h2>Stories from the Gaushala</h2>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <img src="assets/blog1.png" alt="Blog post image">
+        <div class="blog-content">
+          <h3>A Day in the Life at Our Mathura Shelter</h3>
+          <p>Experience the daily routine of caring for our rescued cows, from early morning feeding to medical checkups and evening prayers.</p>
+          <a href="https://razorpay.me/@omexera" class="read-more" target="_blank" rel="noopener">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="assets/blog2.png" alt="Blog post image">
+        <div class="blog-content">
+          <h3>The Healing Power of Gau Seva</h3>
+          <p>Read about the incredible recovery journey of a severely injured cow we rescued from the highway last month.</p>
+          <a href="https://razorpay.me/@omexera" class="read-more" target="_blank" rel="noopener">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGE CTA ============ -->
+<section class="img-cta">
+  <div class="img-cta-wrap">
+    <a href="https://razorpay.me/@omexera" target="_blank" rel="noopener">
+      <img src="assets/cowbanner3.png" alt="Support our cause">
+    </a>
+  </div>
+</section>
+
 <!-- ============ FAQ ============ -->
 <section class="faq" id="faq">
   <div class="wrap">
@@ -1099,6 +1167,7 @@
           <li><a href="#about">About Us</a></li>
           <li><a href="#why">Our Work</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#blog">Blog</a></li>
           <li><a href="#faq">FAQs</a></li>
         </ul>
       </div>
@@ -1114,7 +1183,6 @@
         <h4>Reach Us</h4>
         <ul>
           <li><a href="mailto:contact@shreegaukalyan.org">contact@shreegaukalyan.org</a></li>
-          <li><a href="tel:+918130230800">+91 8130230800</a></li>
           <li>Mathura, Uttar Pradesh, India</li>
         </ul>
       </div>
